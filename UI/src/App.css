@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+button:hover {
+  cursor: pointer; 
+  cursor: hand;}
+.buttons1{
+  width:33vw;
+  height:70vh;
+  float:left;
+  margin-top:3.3%;
+}
+.buttons2{
+  width:33vw;
+  height:70vh;
+  float:left;
+  margin-top:3.3%;
+}
+.sched{
+  width:33vw;
+  height:70vh;
+  float:left;
+  margin-top:3.3%;
+}
+.bookhead{
+  margin:0 auto;
+  background-color:#00BCD4;
+  width:25vw;
+  padding-bottom:5%;
+  padding-top:5%;
+  color:#fff;
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+}
+li{
+  margin:0% auto;
+  margin-top:2.6%;
+  list-style-type:none;
+  text-align:center;
+  width:24.5vw;
+  font-size:1.8em;
+  background:#fff;
+  border:2px solid #00BCD4;
+  padding-bottom:5%;
+  padding-top:5%;
+  transition-duration:0.4s;
+
+}
+li:hover{
+  border:2px solid #ff0000;
+  transition-duration:0.4s;
+  box-shadow: 5px 10px 5px #888;
+}
+.button{
+  display:block;
+  margin:0 auto;
+  margin-bottom:15%;
+  width:26vw;
+  height:15vw;
+  background-color:#00BCD4;
+  color:#fff;
+  font-size:2em;
+  border:1px solid white;
+  transition:0.4s;
+  font-family: 'Montserrat', sans-serif;
+}
+.button:hover{
+  background-color:#fff;
+  color:#00BCD4;
+  transition:0.4s;
+  border-color:#00BCD4;
+}
