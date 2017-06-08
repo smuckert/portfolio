@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import UI from './UI';
 import Home from './Home';
 import Profile from './Profile';
+import { browserHistory } from 'react-router';
 
 var ReactDOM = require('react-dom');
 var session = "";
@@ -55,6 +56,9 @@ export default class App extends Component {
         e.preventDefault();
         var username = this.inputName.value;
         var password = this.inputPassword.value;
+
+        
+
         axios.post(
             'https://jsonplaceholder.typicode.com/posts',
             {
@@ -71,9 +75,9 @@ export default class App extends Component {
                 return;
             } else {
                 
-               
+               browserHistory.push('UI');
                 this.setState({
-                    showUser: `Hej ${response.data.user_name}`,
+                    showUser: ` ${response.data.user_name}`,
                     loggedIn: !this.state.loggedIn
                 });   
             }
@@ -100,7 +104,7 @@ export default class App extends Component {
         
 
         if (this.state.loggedIn) {
-            return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout.bind(this)} />; 
+            return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout} />; 
             };//Om inloggade redirecta till UI component
                                
     return (

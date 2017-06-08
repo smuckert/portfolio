@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import logo from './vetly_logo.png';
 class Booking extends Component {
 	constructor(props){
 		super(props)
@@ -12,7 +12,11 @@ class Booking extends Component {
   			
   		
     return (
-    	<h2>Booking</h2>
+    	<div className="App-header">
+      		<img src={logo} className="logo"/>
+     		<button className='logout-btn' onClick={this.props.logout}>Logga ut från {this.props.showUser}</button>
+     		<button className='start-btn' onClick={this.props.goBack}>Startsida</button>
+    	</div>
     	);
     }
 }

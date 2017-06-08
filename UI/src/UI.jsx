@@ -9,6 +9,7 @@ import { browserHistory } from 'react-router';
 import Inkorg from './inkorg';
 import Djur from './djur';
 import Booking from './booking';
+import logo from './loginLogo.png';
 
 
 
@@ -29,11 +30,14 @@ class UI extends Component {
       this.inkorg = this.inkorg.bind(this);
       this.booking = this.booking.bind(this);
       this.djur = this.djur.bind(this);
+      this.goBack = this.goBack.bind(this);
+      
 
 	}
 
 	profile(e) {
     e.preventDefault();
+    browserHistory.push('Profile');
     this.setState({
       profilebtn:true,
     })
@@ -41,6 +45,7 @@ class UI extends Component {
 }
 inkorg(e) {
     e.preventDefault();
+    browserHistory.push('Inkorg');
     this.setState({
       inkorgbtn:true,
     })
@@ -48,6 +53,7 @@ inkorg(e) {
 }
 booking(e) {
     e.preventDefault();
+    browserHistory.push('Bokning');
     this.setState({
       bookingbtn:true,
     })
@@ -55,62 +61,76 @@ booking(e) {
 }
 djur(e) {
     e.preventDefault();
+    browserHistory.push('Djurprofil');
     this.setState({
       djurbtn:true,
     })
 
 }
+goBack(e) {
+    e.preventDefault();
+    console.log("hej");
+    this.setState({
+      profilebtn: false,
+      inkorgbtn: false,
+      bookingbtn: false,
+      djurbtn: false
+
+    })
+  }
+
 
 	
   render() {
   	if (this.props.loggedIn && this.state.profilebtn === true) {
-          console.log('ho');
 
-          return <Profile />; 
+          return <Profile loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />;
+
             }
     if (this.props.loggedIn && this.state.inkorgbtn === true) {
-          console.log('ho');
+         
 
-          return <Inkorg />; 
+          return <Inkorg loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
             }
     if (this.props.loggedIn && this.state.bookingbtn === true) {
-          console.log('ho');
+          
 
-          return <Booking />; 
+          return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
             }
 
     if (this.props.loggedIn && this.state.djurbtn === true) {
-          console.log('ho');
+          
 
-          return <Djur />; 
+          return <Djur loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout}  />; 
             }
   		
     return (
     	
     <div>
-    <button onClick={this.profile}>Profil </button>
-    <button onClick={this.inkorg}>Inkorg </button>
-    <button onClick={this.booking}>Boka Tid </button>
-    <button onClick={this.djur}>Mina Djur </button>
     
-     {/*<div className="buttons1">
-          <button className="button">
+    <div className="App-header">
+      <img src={logo} className="logo"/>
+      <button className='logout-btn' onClick={this.props.logout}>Logga ut från {this.props.showUser}</button>
+      <button className='start-btn' onClick={this.props.start}>Startsida</button>
+    </div>
+     <div className="buttons1">
+          <button className="button" onClick={this.profile}>
           
           <i className="fa fa-user-o fa-2x" aria-hidden="true"></i>
           <br/> <br/>Profil
 
           </button>
-          <button className="button">
+          <button className="button" onClick={this.djur}>
           <i className="fa fa-paw fa-2x" aria-hidden="true"></i>
 
           <br/><br/>Mina hästar </button>
         </div>
         <div className="buttons2">
-          <button className="button">
+          <button className="button" onClick={this.booking}>
           <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
           <br/><br/>Boka tid
           </button>
-          <button className="button">
+          <button className="button" onClick={this.inkorg}>
           <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>
           <br/><br/>Inkorg
           </button>
@@ -123,17 +143,7 @@ djur(e) {
           <li>Bokning2</li>
           <li>Bokning3</li>
           <li>Bokning4</li>
-        </div>*/}
-        <h1>Dina Bokningar</h1>
-          
-     
-         	<div>
-         	{this.props.showUser}
-         	</div>
-        
-	<button className='login-btn' onClick={this.props.logout}>Logga ut</button>
-     
-     	
+        </div> 	
      </div>
 
     	);

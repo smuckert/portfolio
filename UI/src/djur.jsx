@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './vetly_logo.png';
 
 class Djur extends Component {
 	constructor(props){
@@ -12,7 +13,11 @@ class Djur extends Component {
   			
   		
     return (
-    	<h2>Dina Djur</h2>
+    	<div className="App-header">
+      		<img src={logo} className="logo"/>
+     		<button className='logout-btn' onClick={this.props.logout}>Logga ut från {this.props.showUser}</button>
+     		<button className='start-btn' onClick={this.props.goBack}>Startsida</button>
+    	</div>
     	);
     }
 }

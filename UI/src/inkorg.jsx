@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './vetly_logo.png';
 
 
 class Inkorg extends Component {
@@ -13,7 +14,11 @@ class Inkorg extends Component {
   			
   		
     return (
-    	<h2>Inkorg</h2>
+    	<div className="App-header">
+      		<img src={logo} className="logo"/>
+     		<button className='logout-btn' onClick={this.props.logout}>Logga ut från {this.props.showUser}</button>
+     		<button className='start-btn' onClick={this.props.goBack}>Startsida</button>
+    	</div>
     	);
     }
 }
