@@ -5,10 +5,7 @@ import UI from './UI';
 import Home from './Home';
 import Profile from './Profile';
 
-
-
 var ReactDOM = require('react-dom');
-
 var session = "";
 
 
@@ -26,9 +23,26 @@ export default class App extends Component {
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
+        this.registerUser = this.registerUser.bind(this);
     }
 
+    registerUser(e){
+        e.preventDefault();
+        var newUser = this.inputnewName.value;
+        var password = this.inputPassword.value;
+        var email = this.inputEmail.value;
+        var number = this.inputNumber.value;
 
+        axios.post('https://jsonplaceholder.typicode.com/posts',
+        {
+            userName: newUser,
+            password:password,
+            Email:email,
+            phoneNumber: number
+        }).then((response)=>{
+            console.log(response.data);
+        });
+    }//registrering
     checkLogin() {
         axios.get('https://jsonplaceholder.typicode.com/posts' + session).then((response) => {
             console.log(response.data);
@@ -85,32 +99,27 @@ export default class App extends Component {
         var error = this.state.loginFail ? 'error' : '';
         
 
-            if (this.state.loggedIn) {
-                return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout.bind(this)} />; 
-
-                };//Om inloggade redirecta till UI component
-                
-        		 	
-        
-
-                            
-        return (
-            <div>
-               
-               
-               
-                 
-                {/*<button className='login-btn' onClick={this.displayLogin}>Logga in</button>*/}
-                <div className='username'>{this.state.showUser}</div>
-                        <form action="">
-                            <h2>Logga in</h2>
-                            <input ref={node => this.inputName = node} className="form-control top" /> <br />
-                            <input ref={node => this.inputPassword = node} className="form-control" /><br />
-
-                            <button className="btn btn-success" onClick={this.login.bind(this)}>Logga in</button><br />
-                            
-                        </form>
-                        <span className={error}>{errorTxt}</span>
+        if (this.state.loggedIn) {
+            return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout.bind(this)} />; 
+            };//Om inloggade redirecta till UI component
+                               
+    return (
+        <div> 
+            <form>
+                <h2>Logga in</h2>
+                <input ref={node => this.inputName = node} placeholder="Namn"/> <br />
+                <input ref={node => this.inputPassword = node} placeholder="Lösenord"/><br />
+                <button onClick={this.login.bind(this)}>Logga in</button><br />
+            </form>
+                    <span className={error}>{errorTxt}</span>
+            <form>
+                <h2>Registrera användare</h2>
+                <input ref={node =>this.inputnewName = node}placeholder="Namn"/><br /> 
+                <input ref={node=>this.inputEmail = node}placeholder="Email"/><br />
+                <input ref={node=>this.inputNumber = node}placeholder="Tel Nummer"/><br />
+                <input ref={node=>this.inputPassword = node}placeholder="Lösenord"/><br/>
+                <button onClick={this.registerUser.bind(this)}>registrera</button>
+            </form>
                     
             </div>
         );
