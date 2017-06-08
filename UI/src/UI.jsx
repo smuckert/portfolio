@@ -12,16 +12,16 @@ class UI extends Component {
 	constructor(props){
 		super(props)
 		this.state ={
-      bookFail:'',
-      showBookTime:''
+      /*bookFail:'',
+      showBookTime:''*/
 
 
     }
-    this.book = this.book.bind(this);
-    this.checkBook = this.checkBook.bind(this);
+    /*this.book = this.book.bind(this);
+    this.checkBook = this.checkBook.bind(this);*/
 			
 	}
-	book(e){
+	/*book(e){
     e.preventDefault();
         var name = this.inputname.value;
         var date = this.inputdate.value;
@@ -47,7 +47,7 @@ class UI extends Component {
                 
             }
         });
-  }
+  }*/
 	
   render() {
   			
