@@ -4,6 +4,12 @@ import Home from './Home';
 import App from './App';
 import { BrowserRouter, Router, Route, Link} from 'react-router-dom';
 import Profile from './Profile';
+import { NavLink } from 'react-router-dom';
+import { browserHistory } from 'react-router';
+import Inkorg from './inkorg';
+import Djur from './djur';
+import Booking from './booking';
+
 
 
 
@@ -11,57 +17,83 @@ import Profile from './Profile';
 class UI extends Component {
 	constructor(props){
 		super(props)
-		this.state ={
-      bookFail:'',
-      showBookTime:''
+    this.state = {
+      profilebtn: false,
+      inkorgbtn: false,
+      bookingbtn: false,
+      djurbtn: false
+    };
+		
+   
+			this.profile = this.profile.bind(this);
+      this.inkorg = this.inkorg.bind(this);
+      this.booking = this.booking.bind(this);
+      this.djur = this.djur.bind(this);
 
-
-    }
-    this.book = this.book.bind(this);
-    this.checkBook = this.checkBook.bind(this);
-			
 	}
-	book(e){
+
+	profile(e) {
     e.preventDefault();
-        var name = this.inputname.value;
-        var date = this.inputdate.value;
+    this.setState({
+      profilebtn:true,
+    })
 
-        axios.post(
-            'https://jsonplaceholder.typicode.com/posts',
-            {
-                name: name,
-                date: date
-            }    ).then((response) => {
-            console.log(response.data);
-            console.log(response.data.user_name);
-            const username = response.data.user_name;
-            session = "&token=" + response.data.session;
-            if (date ===null) {
-                this.setState({ bookFail: 'Date already taken' });
-                return;
-            } else {
-              this.setState({
-                showBookTime:`Succesful, You're time is ${response.data.date}`
+}
+inkorg(e) {
+    e.preventDefault();
+    this.setState({
+      inkorgbtn:true,
+    })
 
-              })
-                
-            }
-        });
-  }
+}
+booking(e) {
+    e.preventDefault();
+    this.setState({
+      bookingbtn:true,
+    })
+
+}
+djur(e) {
+    e.preventDefault();
+    this.setState({
+      djurbtn:true,
+    })
+
+}
+
 	
   render() {
-  			
+  	if (this.props.loggedIn && this.state.profilebtn === true) {
+          console.log('ho');
+
+          return <Profile />; 
+            }
+    if (this.props.loggedIn && this.state.inkorgbtn === true) {
+          console.log('ho');
+
+          return <Inkorg />; 
+            }
+    if (this.props.loggedIn && this.state.bookingbtn === true) {
+          console.log('ho');
+
+          return <Booking />; 
+            }
+
+    if (this.props.loggedIn && this.state.djurbtn === true) {
+          console.log('ho');
+
+          return <Djur />; 
+            }
   		
     return (
     	
     <div>
-     <input ref={node => this.name = node} />
-     <input type="date" ref={node =>this.date = node} />
-     
-
+    <button onClick={this.profile}>Profil </button>
+    <button onClick={this.inkorg}>Inkorg </button>
+    <button onClick={this.booking}>Boka Tid </button>
+    <button onClick={this.djur}>Mina Djur </button>
     
-    {/*
-     <div className="buttons1">
+     {/*<div className="buttons1">
           <button className="button">
           
           <i className="fa fa-user-o fa-2x" aria-hidden="true"></i>
@@ -94,7 +126,7 @@ class UI extends Component {
         </div>*/}
         <h1>Dina Bokningar</h1>
           
-      
+     
          	<div>
          	{this.props.showUser}
          	</div>
