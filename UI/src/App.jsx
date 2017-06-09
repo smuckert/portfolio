@@ -5,6 +5,8 @@ import UI from './UI';
 import Home from './Home';
 import Profile from './Profile';
 import { browserHistory } from 'react-router';
+import Logo from './loginLogo.png';
+import Horse from './horse.jpg';
 
 var ReactDOM = require('react-dom');
 var session = "";
@@ -44,12 +46,12 @@ export default class App extends Component {
             console.log(response.data);
         });
     }//registrering
-    checkLogin() {
+      checkLogin() {
         axios.get('https://jsonplaceholder.typicode.com/posts' + session).then((response) => {
             console.log(response.data);
-            
-        });
-    }
+
+            });
+        }
 
     login(e) {
         
@@ -97,40 +99,37 @@ export default class App extends Component {
             });
         });
     }
-
     render() {
         var errorTxt = this.state.loginFail;
         var error = this.state.loginFail ? 'error' : '';
-        
-
         if (this.state.loggedIn) {
             return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout} />; 
-            };//Om inloggade redirecta till UI component
-                               
+            };//Om inloggade redirecta till UI component                     
     return (
-        <div> 
-            <form>
-                <h2>Logga in</h2>
-                <input ref={node => this.inputName = node} placeholder="Namn"/> <br />
-                <input ref={node => this.inputPassword = node} placeholder="Lösenord"/><br />
-                <button onClick={this.login.bind(this)}>Logga in</button><br />
-            </form>
+        <div className="container">
+            <div className="headbar">
+            <img src={Logo} className="vetly_logo" alt= "vetly.se" />
+                <div className="nav">
+                    <input className="name" ref={node => this.inputName = node} placeholder="Namn"/>
+                    <input className="pw" ref={node => this.inputPassword = node} placeholder="Lösenord"/>
+                    <button className="btn-log" onClick={this.login.bind(this)}>Logga in</button>
+                </div>
                     <span className={error}>{errorTxt}</span>
-            <form>
-                <h2>Registrera användare</h2>
-                <input ref={node =>this.inputnewName = node}placeholder="Namn"/><br /> 
-                <input ref={node=>this.inputEmail = node}placeholder="Email"/><br />
-                <input ref={node=>this.inputNumber = node}placeholder="Tel Nummer"/><br />
-                <input ref={node=>this.inputPassword = node}placeholder="Lösenord"/><br/>
-                <button onClick={this.registerUser.bind(this)}>registrera</button>
-            </form>
-                    
             </div>
+            <img src={Horse} className="horse" alt= "" />
+            <div className="reg">
+                <form className="regform">
+                    <h2>Registrera användare</h2>
+                    <input className="reg_namn" ref={node =>this.inputnewName = node}placeholder="Namn"/><input className="reg_mail" ref={node=>this.inputEmail = node}placeholder="Email"/> <br />
+                    <input className="reg_nr" ref={node=>this.inputNumber = node}placeholder="Tel Nummer"/><br />
+                    <input className="reg_pw" ref={node=>this.inputPassword = node}placeholder="Lösenord"/><br/>
+                    <button className="btn_reg" onClick={this.registerUser.bind(this)}>Gå med!</button>
+                </form>    
+            </div>
+            </div>//Slut
         );
     };
 }
-
-
 ReactDOM.render(
   <App />,
   document.getElementById('root')
