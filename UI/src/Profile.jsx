@@ -3,7 +3,7 @@ import './App.css';
 import App from './App';
 import axios from 'axios';
 import { BrowserRouter, Router, Route, Link} from 'react-router-dom';
-import logo from './vetly_logo.png';
+import logo from './loginLogo.png';
 import { browserHistory } from 'react-router';
 
 

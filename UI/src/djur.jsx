@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './vetly_logo.png';
+import logo from './loginLogo.png';
 
 class Djur extends Component {
 	constructor(props){

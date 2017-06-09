@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './vetly_logo.png';
+import logo from './loginLogo.png';
 class Booking extends Component {
 	constructor(props){
 		super(props)
