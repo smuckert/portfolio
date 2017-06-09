@@ -21,7 +21,7 @@ class UI extends Component {
       bookingbtn: false,
       djurbtn: false
     
-    };
+  };
 
 			this.profile = this.profile.bind(this);
       this.inkorg = this.inkorg.bind(this);
@@ -29,7 +29,7 @@ class UI extends Component {
       this.djur = this.djur.bind(this);
       this.goBack = this.goBack.bind(this);     
 	  
-    }
+}
 
 profile(e) {
   e.preventDefault();
@@ -78,25 +78,24 @@ goBack(e) {
   })
 }
 
-
 	
 render() {
 
   if (this.props.loggedIn && this.state.profilebtn === true) {
-      return <Profile loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />;
-      }
+    return <Profile loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />;
+  }
 
   if (this.props.loggedIn && this.state.inkorgbtn === true) {
-      return <Inkorg loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
-      }
+    return <Inkorg loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
+  }
 
   if (this.props.loggedIn && this.state.bookingbtn === true) {
-      return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
-      }
+    return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
+  }
 
   if (this.props.loggedIn && this.state.djurbtn === true) {
-     return <Djur loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout}  />; 
-      }
+    return <Djur loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout}  />; 
+  }
   		
   return (
     	
@@ -125,20 +124,21 @@ render() {
       <button className="button" onClick={this.inkorg}>
       <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>
       <br/><br/>Inkorg</button>
-      </div>
+    </div>
 
-      <div className="sched">
-        <div className="bookhead">
-          <h2>Bokningar</h2>
-          </div>
-          <li>Bokning1</li>
-          <li>Bokning2</li>
-          <li>Bokning3</li>
-          <li>Bokning4</li>
-        </div> 	
-     </div>
+    <div className="sched">
+      <div className="bookhead">
+        <h2>Bokningar</h2>
+        </div>
+        <li>Bokning1</li>
+        <li>Bokning2</li>
+        <li>Bokning3</li>
+        <li>Bokning4</li>
+      </div> 	
+    </div>
 
-    	);
+    );
 	};
 }
+
 export default UI;
