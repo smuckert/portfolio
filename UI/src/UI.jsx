@@ -100,7 +100,7 @@ render() {
   		
   return (
     	
-  <div classname="">
+  <div className="">
     <div className="App-header">
       <img src={logo} className="logo"/>
       <button className='logout-btn' onClick={this.props.logout}>Logga ut från {this.props.showUser}</button>
