@@ -141,3 +141,155 @@ li:hover{
   transition:0.4s;
   border-color:#00BCD4;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+ 
+.container {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+ 
+input {
+    font-size:1.3em;
+    border: none;
+    padding: 1%;
+    border-radius: 10px;
+}
+input::placeholder{
+  top:0;
+  left:0;
+  font-size:.7em;
+}
+ 
+.name {
+    width:33%;
+    height: 5%;
+    margin-right: 5.5%;
+    margin-top: 1%;
+}
+ 
+.pw {
+    width: 33%;
+    height: 5%;
+    margin-right: 3%;
+    margin-top: 1%;
+}
+ 
+.reg {
+    width:38vw;
+    float: right;
+    margin-top: 5%;
+    margin-right: 4.5%;
+    display: inline;
+    background-color: #00bcd4;
+    border-radius: 10px;
+    color: white;
+}
+ 
+ 
+.regform {
+    width: 100%;
+    height: 100%;
+    border: 2px;
+    text-decoration: none;
+    text-align: justify;
+    text-align: center;
+}
+ 
+.reg_namn{
+    width: 40%;
+    height: 20%;
+}
+ 
+.reg_mail{
+    width: 40%;
+    height: 20%;
+    margin-left: 6%;
+}
+ 
+.reg_nr{
+    width: 88%;
+    height: 20%;
+    margin-top: 8%;
+}
+ 
+.reg_pw {
+    width: 88%;
+    height: 20%;
+    margin-top: 8%;
+   
+}
+ 
+.headbar {
+  background-color: #00BCD4;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+ 
+.headbar img{
+    background-color: #00bcd4;
+    float: left;
+    margin-left: 2%;
+}
+ 
+.nav{
+    float: left;
+    margin-left: 30%;
+    display: inline;
+    margin-top: 2%;
+}
+ 
+ 
+.btn-log {
+    font-size:1.3em;
+    width:20%;
+    height: 20%;
+    border:2px solid white;
+    border-radius: 10px;
+    background-color:#00bcd4;
+    color: white;
+    transition:0.4s;
+    margin-top: 1%;
+    padding:1%;
+}
+ 
+.btn-log:hover {
+    background-color:white;
+    color:#00bcd4;
+    transition:0.4s;
+}
+ 
+.btn_reg {
+    font-size:1.3em;
+    width: 90%;
+    height: 20%;
+    border:2px solid white;
+    border-radius: 10px;
+    background-color: #00bcd4;
+    color: white;
+    transition:0.4s;
+    margin-bottom: 5%;
+    margin-top: 8%;
+    padding:1%;
+}
+ 
+.btn_reg:hover {
+    background-color:#fff;
+    color:#00bcd4;
+    transition:0.4s;
+}
+ 
+.horse {
+    width:38%;
+    height:38%;
+    margin-top: 5%;
+    border:2px;
+    border-radius: 10px;
+    margin-left: 4%;
+}
