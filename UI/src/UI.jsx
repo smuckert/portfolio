@@ -90,7 +90,7 @@ render() {
   }
 
   if (this.props.loggedIn && this.state.bookingbtn === true) {
-    return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} />; 
+    return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} date={this.props.date} />; 
   }
 
   if (this.props.loggedIn && this.state.djurbtn === true) {
@@ -130,10 +130,10 @@ render() {
       <div className="bookhead">
         <h2>Bokningar</h2>
         </div>
-        <li>Bokning1</li>
-        <li>Bokning2</li>
-        <li>Bokning3</li>
-        <li>Bokning4</li>
+        <li>{this.props.date}</li>
+        <li>{this.props.date}</li>
+        <li>{this.props.date}</li>
+        <li>{this.props.date}</li>
       </div> 	
     </div>
 

@@ -6,7 +6,7 @@ class Booking extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			date: '2017-06-09',
+
 			bokning: '',
 			firstBtn: '7.00',
 			secondBtn: '7.15',
@@ -45,7 +45,7 @@ class Booking extends Component {
     	</div>
 
 		<div className="datePicker">
-		{this.state.date}
+		{this.props.date}
 		</div>
 		
 		<div className="available">
@@ -56,15 +56,15 @@ class Booking extends Component {
 		<button onClick={this.modal}>{this.state.fifthBtn}</button>
 		<dialog id="myDialog">
 		Namn:
-		<input className="modalInput" />
+		<input className="modalInput" /><br />
 		Ålder:
-		<input className="modalInput" />
+		<input className="modalInput" /><br />
 		Ras:
-		<input className="modalInput" />
-		Beskrivning
-		<textarea />
+		<input className="modalInput" /><br />
+		Beskrivning:
+		<textarea /><br />
 
-		<button className="confirmBooking" onClick={this.bookingBtn}>Boka</button>
+		<button className="confirmBooking" onClick={this.bookingBtn}>Boka</button><br />
 		{this.state.bokning}
 
 

@@ -18,6 +18,7 @@ export default class App extends Component {
 
         super(props)
         this.state = {
+            date: '2017-06-09',
             showLogin: false,
             showUser: '',
             loggedIn: false,
@@ -103,7 +104,7 @@ export default class App extends Component {
         var errorTxt = this.state.loginFail;
         var error = this.state.loginFail ? 'error' : '';
         if (this.state.loggedIn) {
-            return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout} />; 
+            return <UI loggedIn={this.state.loggedIn} showUser={this.state.showUser} logout={this.logout} date={this.state.date} />; 
             };//Om inloggade redirecta till UI component                     
     return (
         <div className="container">
