@@ -87,6 +87,10 @@ button:hover {
   float:left;
   margin-top:3.3%;
 }
+
+.bookingTab {
+  font-size: 20px
+}
 .sched{
   width:30vw;
   height:70vh;

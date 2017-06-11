@@ -138,11 +138,11 @@ render() {
       <div className="bookhead">
         <h2>Bokningar</h2>
         </div>
-        <li>{this.props.date}<p>{this.state.firstBtn}</p></li>
-        <li>{this.props.date}<p>{this.state.secondBtn}</p></li>
-        <li>{this.props.date}<p>{this.state.thirdBtn}</p></li>
-        <li>{this.props.date}<p>{this.state.fourthBtn}</p></li>
-        <li>{this.props.date}<p>{this.state.fifthBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.firstBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.secondBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.thirdBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.fourthBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.fifthBtn}</p></li>
       </div> 	
     </div>
 
