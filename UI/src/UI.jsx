@@ -19,7 +19,12 @@ class UI extends Component {
       profilebtn: false,
       inkorgbtn: false,
       bookingbtn: false,
-      djurbtn: false
+      djurbtn: false,
+      firstBtn: '7.00',
+			secondBtn: '7.15',
+			thirdBtn: '7.30',
+			fourthBtn: '7.45',
+			fifthBtn: '8.00'
     
   };
 
@@ -27,7 +32,8 @@ class UI extends Component {
       this.inkorg = this.inkorg.bind(this);
       this.booking = this.booking.bind(this);
       this.djur = this.djur.bind(this);
-      this.goBack = this.goBack.bind(this);     
+      this.goBack = this.goBack.bind(this); 
+     
 	  
 }
 
@@ -90,7 +96,9 @@ render() {
   }
 
   if (this.props.loggedIn && this.state.bookingbtn === true) {
-    return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout} date={this.props.date} />; 
+    return <Booking loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} firstBtn={this.state.firstBtn} 
+    secondBtn={this.state.secondBtn} thirdBtn={this.state.thirdBtn} fourthBtn={this.state.fourthBtn} fifthBtn={this.state.fifthBtn}  
+    logout={this.props.logout} date={this.props.date} />; 
   }
 
   if (this.props.loggedIn && this.state.djurbtn === true) {
@@ -130,10 +138,11 @@ render() {
       <div className="bookhead">
         <h2>Bokningar</h2>
         </div>
-        <li>{this.props.date}</li>
-        <li>{this.props.date}</li>
-        <li>{this.props.date}</li>
-        <li>{this.props.date}</li>
+        <li>{this.props.date}<p>{this.state.firstBtn}</p></li>
+        <li>{this.props.date}<p>{this.state.secondBtn}</p></li>
+        <li>{this.props.date}<p>{this.state.thirdBtn}</p></li>
+        <li>{this.props.date}<p>{this.state.fourthBtn}</p></li>
+        <li>{this.props.date}<p>{this.state.fifthBtn}</p></li>
       </div> 	
     </div>
 

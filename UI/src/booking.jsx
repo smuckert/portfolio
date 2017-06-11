@@ -8,21 +8,27 @@ class Booking extends Component {
 		this.state = {
 
 			bokning: '',
-			firstBtn: '7.00',
-			secondBtn: '7.15',
-			thirdBtn: '7.30',
-			fourthBtn: '7.45',
-			fifthBtn: '8.00'
 
 		}	
 		this.modal = this.modal.bind(this);
 		this.bookingBtn = this.bookingBtn.bind(this);
+		this.closeModal = this.closeModal.bind(this);
 	}
 	
 	modal(e) { 
 		e.preventDefault();
 		console.log('hej');
     	document.getElementById("myDialog").showModal(); 
+	}
+
+	closeModal(e) {
+		e.preventDefault();
+		var m = document.getElementById("myDialog");
+		
+
+		this.setState ({
+			bokning: ''
+		})
 	}
 
 	bookingBtn(e) { 
@@ -49,11 +55,11 @@ class Booking extends Component {
 		</div>
 		
 		<div className="available">
-		<button onClick={this.modal}>{this.state.firstBtn}</button>
-		<button onClick={this.modal}>{this.state.secondBtn}</button>
-		<button onClick={this.modal}>{this.state.thirdBtn}</button>
-		<button onClick={this.modal}>{this.state.fourthBtn}</button>
-		<button onClick={this.modal}>{this.state.fifthBtn}</button>
+		<button onClick={this.modal}>{this.props.firstBtn}</button>
+		<button onClick={this.modal}>{this.props.secondBtn}</button>
+		<button onClick={this.modal}>{this.props.thirdBtn}</button>
+		<button onClick={this.modal}>{this.props.fourthBtn}</button>
+		<button onClick={this.modal}>{this.props.fifthBtn}</button>
 		<dialog id="myDialog">
 		Namn:
 		<input className="modalInput" /><br />
@@ -64,8 +70,9 @@ class Booking extends Component {
 		Beskrivning:
 		<textarea /><br />
 
-		<button className="confirmBooking" onClick={this.bookingBtn}>Boka</button><br />
-		{this.state.bokning}
+		<button className="confirmBooking" onClick={this.bookingBtn}>Boka</button>
+		<button className="closeModal" onClick={this.closeModal}>X</button><br />
+		{this.state.bokning} 
 
 
 
