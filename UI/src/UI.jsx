@@ -34,8 +34,6 @@ class UI extends Component {
       this.booking = this.booking.bind(this);
       this.djur = this.djur.bind(this);
       this.goBack = this.goBack.bind(this); 
-     
-	  
 }
 
 profile(e) {

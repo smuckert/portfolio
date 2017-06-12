@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import logo from './loginLogo.png';
 
-
 class Booking extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-
 			bokning: '',
-
 		}	
 		this.modal = this.modal.bind(this);
 		this.bookingBtn = this.bookingBtn.bind(this);
@@ -25,7 +22,6 @@ class Booking extends Component {
 		e.preventDefault();
 		var m = document.getElementById("myDialog");
 		
-
 		this.setState ({
 			bokning: '',
 			showModal: false
@@ -41,8 +37,7 @@ class Booking extends Component {
 	}
 
   render() {
-  			
-  		
+  				
     return (
 		<div className="bookingWrapper">
     	<div className="App-header">
@@ -56,11 +51,15 @@ class Booking extends Component {
 		</div>
 		
 		<div className="available">
+
 		<button className="btnClass" onClick={this.modal}>{this.props.firstBtn}</button>
 		<button className="btnClass" onClick={this.modal}>{this.props.secondBtn}</button>
 		<button className="btnClass" onClick={this.modal}>{this.props.thirdBtn}</button>
 		<button className="btnClass" onClick={this.modal}>{this.props.fourthBtn}</button>
 		<button className="btnClass" onClick={this.modal}>{this.props.fifthBtn}</button>
+
+			
+
 		<dialog id="myDialog">
 		Namn:
 		<input className="modalInput" /><br />
