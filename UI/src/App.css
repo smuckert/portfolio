@@ -126,6 +126,30 @@ li:hover{
   transition-duration:0.4s;
   box-shadow: 5px 10px 5px #888;
 }
+
+.available {
+  width: 100%;
+  margin-left: 10%;
+}
+.btnClass {
+  display:inline;
+  margin: 10% 1% 4% 2.5%;
+  
+  width:12vw;
+  height:7vw;
+  background-color:#00BCD4;
+  color:#fff;
+  font-size:2em;
+  border:1px solid white;
+  transition:0.4s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btnClass:hover {
+  border:2px solid #ff0000;
+  transition-duration:0.4s;
+  box-shadow: 5px 10px 5px #888;
+}
 .button{
   display:block;
   margin:0 auto;

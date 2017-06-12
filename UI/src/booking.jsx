@@ -27,7 +27,8 @@ class Booking extends Component {
 		
 
 		this.setState ({
-			bokning: ''
+			bokning: '',
+			showModal: false
 		})
 	}
 
@@ -55,11 +56,11 @@ class Booking extends Component {
 		</div>
 		
 		<div className="available">
-		<button onClick={this.modal}>{this.props.firstBtn}</button>
-		<button onClick={this.modal}>{this.props.secondBtn}</button>
-		<button onClick={this.modal}>{this.props.thirdBtn}</button>
-		<button onClick={this.modal}>{this.props.fourthBtn}</button>
-		<button onClick={this.modal}>{this.props.fifthBtn}</button>
+		<button className="btnClass" onClick={this.modal}>{this.props.firstBtn}</button>
+		<button className="btnClass" onClick={this.modal}>{this.props.secondBtn}</button>
+		<button className="btnClass" onClick={this.modal}>{this.props.thirdBtn}</button>
+		<button className="btnClass" onClick={this.modal}>{this.props.fourthBtn}</button>
+		<button className="btnClass" onClick={this.modal}>{this.props.fifthBtn}</button>
 		<dialog id="myDialog">
 		Namn:
 		<input className="modalInput" /><br />
