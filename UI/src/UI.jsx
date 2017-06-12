@@ -76,12 +76,13 @@ djur(e) {
 
 goBack(e) {
   e.preventDefault();
+  browserHistory.push('UI');
   this.setState({
     profilebtn: false,
     inkorgbtn: false,
     bookingbtn: false,
     djurbtn: false
-
+    
   })
 }
 
@@ -105,6 +106,7 @@ render() {
   if (this.props.loggedIn && this.state.djurbtn === true) {
     return <Djur loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout}  />; 
   }
+
 
 
   return (
