@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './loginLogo.png';
-import Material-icons from 'material-icons';
+
 
 class Booking extends Component {
 	constructor(props){
