@@ -12,22 +12,25 @@ var ReactDOM = require('react-dom');
 var session = "";
 
 
+
 export default class App extends Component {
     constructor(props) {
 
 
         super(props)
         this.state = {
-            date: '2017-06-09',
+            date: '2017-06-12',
             showLogin: false,
             showUser: '',
             loggedIn: false,
             loginFail: ''
+           
         };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.checkLogin = this.checkLogin.bind(this);
         this.registerUser = this.registerUser.bind(this);
+        
     }
 
     registerUser(e){
@@ -53,6 +56,10 @@ export default class App extends Component {
 
             });
         }
+
+   
+    
+    
 
     login(e) {
         

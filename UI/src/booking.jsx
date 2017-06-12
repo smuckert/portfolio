@@ -20,7 +20,7 @@ class Booking extends Component {
 
 	closeModal(e) {
 		e.preventDefault();
-		var m = document.getElementById("myDialog");
+		document.getElementById("myDialog").close();
 		
 		this.setState ({
 			bokning: '',
@@ -35,7 +35,7 @@ class Booking extends Component {
 			bokning: 'Din tid är bokad!'
 		})
 	}
-
+ 
   render() {
   				
     return (
