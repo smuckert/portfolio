@@ -27,7 +27,6 @@ export default class App extends Component {
         };
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
-        this.checkLogin = this.checkLogin.bind(this);
         this.registerUser = this.registerUser.bind(this);
         
     }
@@ -128,8 +127,5 @@ export default class App extends Component {
         );
     };
 }
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+
 
