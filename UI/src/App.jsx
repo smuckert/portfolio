@@ -19,7 +19,6 @@ export default class App extends Component {
         super(props)
         this.state = {
             date: '2017-06-13',
-            showLogin: false,
             showUser: '',
             loggedIn: false,
             loginFail: '',
