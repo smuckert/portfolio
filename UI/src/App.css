@@ -323,16 +323,12 @@ input::placeholder{
     margin-left: 4%;
 }
 
-<<<<<<< HEAD
-
 dialog {
   border: 2px solid black;
   border-radius: 10px;
   padding: 50px;
 }
 .modalInput {
-  
-
   border: solid black;
   margin-bottom: 10px;
   font-family: sans-serif;
@@ -365,7 +361,7 @@ dialog {
   background-color: black;
   color: white;
  }
-=======
+
 @media (max-width: 1200px) {
 
   .headbar {
@@ -477,4 +473,4 @@ dialog {
   }
 
 }
->>>>>>> 636d3129636fd86ad09c4fc51ff9680adbbf7a5d
+
