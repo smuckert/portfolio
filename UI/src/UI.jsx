@@ -24,7 +24,8 @@ class UI extends Component {
 			secondBtn: '7.15',
 			thirdBtn: '7.30',
 			fourthBtn: '7.45',
-			fifthBtn: '8.00'
+			fifthBtn: '8.00',
+      Veterinär: 'Veterinär: Sture Bengtsson'
     
   };
 
@@ -104,7 +105,8 @@ render() {
   if (this.props.loggedIn && this.state.djurbtn === true) {
     return <Djur loggedIn={this.props.loggedIn} goBack={this.goBack} showUser={this.props.showUser} logout={this.props.logout}  />; 
   }
-  		
+
+
   return (
     	
   <div className="">
@@ -138,11 +140,10 @@ render() {
       <div className="bookhead">
         <h2>Bokningar</h2>
         </div>
-        <li className="bookingTab">{this.props.date}<p>{this.state.firstBtn}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.secondBtn}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.thirdBtn}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.fourthBtn}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.fifthBtn}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.firstBtn}</p><p>{this.state.Veterinär}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.secondBtn}</p><p>{this.state.Veterinär}</p></li>
+        <li className="bookingTab">{this.props.date}<p>{this.state.thirdBtn}</p><p>{this.state.Veterinär}</p></li>
+        
       </div> 	
     </div>
 
