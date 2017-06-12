@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './loginLogo.png';
+import Material-icons from 'material-icons';
 
 class Booking extends Component {
 	constructor(props){
@@ -47,7 +48,7 @@ class Booking extends Component {
     	</div>
 
 		<div className="datePicker">
-		{this.props.date}
+		<h1 className="bookingh1">Lediga tider {this.props.date}</h1>
 		</div>
 		
 		<div className="available">
@@ -61,14 +62,11 @@ class Booking extends Component {
 			
 
 		<dialog id="myDialog">
-		Namn:
-		<input className="modalInput" /><br />
-		Ålder:
-		<input className="modalInput" /><br />
-		Ras:
-		<input className="modalInput" /><br />
-		Beskrivning:
-		<textarea /><br />
+		<h3 className="h3dialog">Boka tid</h3>
+		<input className="modalInput" placeholder="Namn" /><br />
+		<input className="modalInput" placeholder="Ålder"/><br />
+		<input className="modalInput" placeholder="Ras"/><br />
+		<textarea className="textInput" placeholder="Beskrivning av ärendet"/><br />
 
 		<button className="confirmBooking" onClick={this.bookingBtn}>Boka</button>
 		<button className="closeModal" onClick={this.closeModal}>X</button><br />

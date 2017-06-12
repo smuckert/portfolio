@@ -19,11 +19,12 @@ export default class App extends Component {
 
         super(props)
         this.state = {
-            date: '2017-06-12',
+            date: '2017-06-13',
             showLogin: false,
             showUser: '',
             loggedIn: false,
-            loginFail: ''
+            loginFail: '',
+            
            
         };
         this.login = this.login.bind(this);
@@ -57,7 +58,7 @@ export default class App extends Component {
             });
         }
 
-   
+    
     
     
 
