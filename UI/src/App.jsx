@@ -8,7 +8,6 @@ import { browserHistory } from 'react-router';
 import Logo from './loginLogo.png';
 import Horse from './horse.jpg';
 
-var ReactDOM = require('react-dom');
 var session = "";
 
 
@@ -51,21 +50,12 @@ export default class App extends Component {
             console.log(response.data);
         });
     }//registrering
-      checkLogin() {
-        axios.get('https://jsonplaceholder.typicode.com/posts' + session).then((response) => {
-            console.log(response.data);
-
-            });
-        }
-
-    
-    
-    
+      
 
     login(e) {
         
         e.preventDefault();
-        var username = this.inputName.value;
+        var email = this.inputEmail.value;
         var password = this.inputPassword.value;
 
         
@@ -73,15 +63,15 @@ export default class App extends Component {
         axios.post(
             'https://jsonplaceholder.typicode.com/posts',
             {
-                user_name: username,
-                user_password: password
+                email: email,
+                password: password
             }
         ).then((response) => {
             console.log(response.data);
-            console.log(response.data.user_name);
-            const username = response.data.user_name;
-            session = "&token=" + response.data.session;
-            if (username === null) {
+            console.log(response.data.headers);
+            session = response.data.headers;
+            //Lagra TOKEN i SESSION
+            if (email === null) {
                 this.setState({ loginFail: 'Användarnamnet eller lösenordet är fel' });
                 return;
             } else {
@@ -119,7 +109,7 @@ export default class App extends Component {
             <div className="headbar">
             <img src={Logo} className="vetly_logo" alt= "vetly.se" />
                 <div className="nav">
-                    <input className="name" ref={node => this.inputName = node} placeholder="Namn"/>
+                    <input className="name" ref={node => this.inputEmail = node} placeholder="Email"/>
                     <input className="pw" ref={node => this.inputPassword = node} placeholder="Lösenord"/>
                     <button className="btn-log" onClick={this.login.bind(this)}>Logga in</button>
                 </div>
