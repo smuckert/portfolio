@@ -25,7 +25,7 @@ class UI extends Component {
 			thirdBtn: '7.30',
 			fourthBtn: '7.45',
 			fifthBtn: '8.00',
-      Veterinär: 'Veterinär: Sture Bengtsson'
+      Veterinär: 'Sture Bengtsson'
     
   };
 
@@ -140,9 +140,9 @@ render() {
       <div className="bookhead">
         <h2>Bokningar</h2>
         </div>
-        <li className="bookingTab">{this.props.date}<p>{this.state.firstBtn}</p><p>{this.state.Veterinär}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.secondBtn}</p><p>{this.state.Veterinär}</p></li>
-        <li className="bookingTab">{this.props.date}<p>{this.state.thirdBtn}</p><p>{this.state.Veterinär}</p></li>
+        <li className="bookingTab">Datum: {this.props.date}<p>Tid: {this.state.firstBtn}</p><p>Veterinär: {this.state.Veterinär}</p></li>
+        <li className="bookingTab">Datum: {this.props.date}<p>Tid: {this.state.secondBtn}</p><p>Veterinär: {this.state.Veterinär}</p></li>
+        <li className="bookingTab">Datum: {this.props.date}<p>Tid: {this.state.thirdBtn}</p><p>Veterinär: {this.state.Veterinär}</p></li>
         
       </div> 	
     </div>
