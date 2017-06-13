@@ -65,7 +65,7 @@ export default class App extends Component {
                 password: password
             }
         ).then((response) => {
-            console.log(response.data);
+            //console.log(response.data);
             console.log(response.data.headers);
             session = response.data.headers;
             //Lagra TOKEN i SESSION
