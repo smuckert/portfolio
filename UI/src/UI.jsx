@@ -10,7 +10,7 @@ import Inkorg from './inkorg';
 import Djur from './djur';
 import Booking from './booking';
 import logo from './loginLogo.png';
-
+import './resp.css';
 
 class UI extends Component {
 	constructor(props){
@@ -119,21 +119,21 @@ render() {
     <div className="buttons1">
       <button className="button" onClick={this.profile}>
       <i className="fa fa-user-o fa-2x" aria-hidden="true"></i>
-      <br/> <br/>Profil</button>
+      <br/><p>Profil</p></button>
 
       <button className="button" onClick={this.djur}>
       <i className="fa fa-paw fa-2x" aria-hidden="true"></i>
-      <br/><br/>Mina hästar</button>
+      <br/><p>Mina hästar</p></button>
       </div>
 
       <div className="buttons2">
       <button className="button" onClick={this.booking}>
       <i className="fa fa-calendar fa-2x" aria-hidden="true"></i>
-      <br/><br/>Boka tid</button>
+      <br/><p>Boka tid</p></button>
 
       <button className="button" onClick={this.inkorg}>
       <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>
-      <br/><br/>Inkorg</button>
+      <br/><p>Inkorg</p></button>
     </div>
 
     <div className="sched">

@@ -33,7 +33,7 @@ class Booking extends Component {
 		e.preventDefault();
 		console.log('hejjjjjjjjjjj');
     	this.setState ({
-			bokning: 'Din tid är bokad!'
+			bokning: <p className="hej">Din tid är bokad!</p>
 		})
 	}
  
